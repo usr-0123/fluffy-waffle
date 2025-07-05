@@ -7,7 +7,7 @@ pool:
     name: 'Agent Luwi'
   
 jobs:
-- job: henkem-kenya-ui-job
+- job: henkem_kenya_ui_job
   steps:
   - task: NodeTool@0
     inputs:
