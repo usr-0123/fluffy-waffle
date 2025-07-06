@@ -22,6 +22,10 @@ jobs:
   - script: |
       npm ci
     displayName: 'NPM CI'
+    
+  - script: |
+      ls -la
+    displayName: 'List the files getting executed'
 
   - task: NodeTool@0
     inputs:
