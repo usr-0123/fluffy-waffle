@@ -36,6 +36,10 @@ jobs:
       npm run build
     displayName: 'NPM RUN BUILD for first ui project'          
 
+  - script: |
+      ls -la
+    displayName: 'List the files getting archived'
+
   - task: ArchiveFiles@2
     displayName: 'Archive UI build files'  
     condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
