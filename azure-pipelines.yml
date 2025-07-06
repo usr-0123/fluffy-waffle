@@ -37,6 +37,7 @@ jobs:
     displayName: 'NPM RUN BUILD for first ui project'          
 
   - script: |
+      echo '$(Build.SourcesDirectory)'
       ls -la
     displayName: 'List the files getting archived'
 
