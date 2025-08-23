@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../../../../Templates/spark-vision-builds/src/components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 import ServiceForm from './ServiceForm';
 import ProjectForm from './ProjectForm';
 import ArticleForm from './ArticleForm';

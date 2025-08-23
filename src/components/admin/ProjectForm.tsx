@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Button } from '../../../../../Templates/spark-vision-builds/src/components/ui/button';
-import { Input } from '../../../../../Templates/spark-vision-builds/src/components/ui/input';
-import { Textarea } from '../../../../../Templates/spark-vision-builds/src/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '../../../../../Templates/spark-vision-builds/src/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../../../Templates/spark-vision-builds/src/components/ui/select';
-import { Label } from '../../../../../Templates/spark-vision-builds/src/components/ui/label';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
+import { Textarea } from '../ui/textarea'; 
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
+import { Label } from '../ui/label'; 
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { ref as dbRef, push, set } from 'firebase/database';
-import { storage, database } from '../../../../../Templates/spark-vision-builds/src/lib/firebase';
+import { storage, database } from '@/lib/firebase';
 import { toast } from 'sonner';
 import { Upload, Image } from 'lucide-react';
 

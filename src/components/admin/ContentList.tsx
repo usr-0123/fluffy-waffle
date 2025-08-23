@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { Button } from '../../../../../Templates/spark-vision-builds/src/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../../../../../Templates/spark-vision-builds/src/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../../../Templates/spark-vision-builds/src/components/ui/table';
-import { useContentData } from '../../../../../Templates/spark-vision-builds/src/hooks/useContentData';
+import { Button } from '../ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
+import { useContentData } from '../../hooks/useContentData';
 import { ref, remove, update } from 'firebase/database';
-import { database } from '../../../../../Templates/spark-vision-builds/src/lib/firebase';
-import { useToast } from '../../../../../Templates/spark-vision-builds/src/hooks/use-toast';
+import { database } from '../../lib/firebase';
+import { useToast } from '../../hooks/use-toast';
 import { Edit, Trash2, Eye, ExternalLink } from 'lucide-react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../../../../../Templates/spark-vision-builds/src/components/ui/dialog';
-import { Input } from '../../../../../Templates/spark-vision-builds/src/components/ui/input';
-import { Label } from '../../../../../Templates/spark-vision-builds/src/components/ui/label';
-import { Textarea } from '../../../../../Templates/spark-vision-builds/src/components/ui/textarea';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
+import { Textarea } from '../ui/textarea';
 
 interface ContentListProps {
   contentType: 'service' | 'project' | 'article' | 'partner';

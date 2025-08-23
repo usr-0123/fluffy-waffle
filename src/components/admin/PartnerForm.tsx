@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Button } from '../../../../../Templates/spark-vision-builds/src/components/ui/button';
-import { Input } from '../../../../../Templates/spark-vision-builds/src/components/ui/input';
-import { Label } from '../../../../../Templates/spark-vision-builds/src/components/ui/label';
-import { Textarea } from '../../../../../Templates/spark-vision-builds/src/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../../../Templates/spark-vision-builds/src/components/ui/select';
-import { useToast } from '../../../../../Templates/spark-vision-builds/src/hooks/use-toast';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
+import { Textarea } from '../ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
+import { useToast } from '@/hooks/use-toast';
 import { ref, push } from 'firebase/database';
 import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { database, storage } from '../../../../../Templates/spark-vision-builds/src/lib/firebase';
+import { database, storage } from '@/lib/firebase';
 import { Upload, Plus } from 'lucide-react';
 
 const PartnerForm = () => {

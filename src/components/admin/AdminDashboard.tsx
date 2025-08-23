@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Button } from '../../../../../Templates/spark-vision-builds/src/components/ui/button';
-import { useAdmin } from '../../../../../Templates/spark-vision-builds/src/contexts/AdminContext';
+import { useState } from 'react';
+import { Button } from '../ui/button';
+import { useAdmin } from '@/contexts/AdminContext';
 import { LogOut, Upload, BarChart3 } from 'lucide-react';
 import ContentUpload from './ContentUpload';
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Button } from '../../../../../Templates/spark-vision-builds/src/components/ui/button';
-import { Input } from '../../../../../Templates/spark-vision-builds/src/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '../../../../../Templates/spark-vision-builds/src/components/ui/card';
-import { useAdmin } from '../../../../../Templates/spark-vision-builds/src/contexts/AdminContext';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { useAdmin } from '@/contexts/AdminContext';
 import { toast } from 'sonner';
 import { Lock } from 'lucide-react';
 
