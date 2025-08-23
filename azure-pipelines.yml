@@ -38,13 +38,13 @@ jobs:
     inputs:
       rootFolderOrFile: '$(Build.SourcesDirectory)/dist'
       includeRootFolder: false
-      archiveFile: '$(Build.ArtifactDirectory)/$(Build.BuildId).zip'
-      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactDirectory)/$(Build.BuildId).tar.gz'
+      archiveType: 'tar'
       replaceExistingArchive: true
 
   - task: PublishPipelineArtifact@1
     displayName: 'Publish UI artifact'
     condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
     inputs:
-      targetPath: '$(Build.ArtifactDirectory)/$(Build.BuildId).zip'
+      targetPath: '$(Build.ArtifactDirectory)/$(Build.BuildId).tar.gz'
       artifact: 'ui_artifact'          
