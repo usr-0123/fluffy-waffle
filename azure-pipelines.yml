@@ -4,7 +4,7 @@ trigger:
         - '**/*'
 
 pool: 
-    name: 'Agent Luwi'
+    name: 'Unix'
   
 jobs:
 - job: henkem_kenya_ui_job
