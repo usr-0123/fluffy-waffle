@@ -3,6 +3,10 @@ trigger:
       include:
         - '**/*'
 
+    branches:
+      include:
+        - master
+
 pool:
     name: 'Unix'
 
