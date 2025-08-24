@@ -40,7 +40,7 @@ export const useContentData = (contentType: string) => {
                         }));
                         setData(items.sort((a, b) => a.createdAt - b.createdAt));
                     } else {
-                        setData([...data]);
+                        setData([]);
                     }
                     setLoading(false);
                 } catch (err) {

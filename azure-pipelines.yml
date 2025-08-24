@@ -8,7 +8,16 @@ pool:
   
 jobs:
 - job: henkem_kenya_ui_job
+  variables:
+  - group: FirebaseConfig
+
   steps:
+  - task: replacetokens@5
+    inputs:
+      targetFiles: '$(Build.SourcesDirectory)/src/lib/firebase.ts'
+      encoding: 'utf-8'
+      tokenPattern: 'default'
+
   - task: NodeTool@0
     inputs:
       versionSpec: '18.x'
