@@ -47,8 +47,8 @@ jobs:
     inputs:
       rootFolderOrFile: '$(Build.SourcesDirectory)/dist'
       includeRootFolder: false
-      archiveFile: '$(Build.ArtifactDirectory)/$(Build.BuildId).zip'
-      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactDirectory)/$(Build.BuildId).tar.gz'
+      archiveType: 'tar'
       replaceExistingArchive: true
 
   - task: PublishPipelineArtifact@1
