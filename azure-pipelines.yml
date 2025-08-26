@@ -49,12 +49,12 @@ jobs:
     inputs:
       rootFolderOrFile: '$(Build.SourcesDirectory)/dist'
       includeRootFolder: false
-      archiveFile: '$(Build.ArtifactDirectory)/$(Build.BuildId).zip'
-      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactDirectory)/$(Build.BuildId).tar.gz'
+      archiveType: 'tar'
       replaceExistingArchive: true
 
   - task: PublishPipelineArtifact@1
     displayName: 'Publish UI artifact'
     inputs:
-      targetPath: '$(Build.ArtifactDirectory)/$(Build.BuildId).zip'
-      artifact: 'ui_artifact'
+      targetPath: '$(Build.ArtifactDirectory)/$(Build.BuildId).tar.gz'
+      artifact: 'henkem_kenya_ui'
