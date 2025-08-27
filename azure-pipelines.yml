@@ -16,25 +16,19 @@ jobs:
 
   steps:
   - bash: |
-      echo "##vso[task.setvariable variable=REACT_APP_API_KEY]$(API_KEY)"
-      echo "##vso[task.setvariable variable=REACT_APP_AUTH_DOMAIN]$(AUTH_DOMAIN)"
-      echo "##vso[task.setvariable variable=REACT_APP_DATABASE_URL]$(DATABASE_URL)"
-      echo "##vso[task.setvariable variable=REACT_APP_PROJECT_ID]$(PROJECT_ID)"
-      echo "##vso[task.setvariable variable=REACT_APP_STORAGE_BUCKET]$(STORAGE_BUCKET)"
-      echo "##vso[task.setvariable variable=REACT_APP_MESSAGING_SENDER_ID]$(MESSAGING_SENDER_ID)"
-      echo "##vso[task.setvariable variable=REACT_APP_APP_ID]$(APP_ID)"
-      echo "##vso[task.setvariable variable=REACT_APP_MEASUREMENT_ID]$(MEASUREMENT_ID)"
-    displayName: "Set Environment Variables"
-
-  - bash: |
       cat > $(Build.SourcesDirectory)/src/lib/firebase.config.json <<EOL
       {
-        "apiKey": "$(API_KEY)"
+        "apiKey": "$(API_KEY)",
+        "authDomain": "$(AUTH_DOMAIN)",
+        "databaseUrl": "$(DATABASE_URL)",
+        "projectId": "$(PROJECT_ID)",
+        "storageBucket": "$(STORAGE_BUCKET)",
+        "messageSenderId": "$(MESSAGING_SENDER_ID)",
+        "appId": "$(APP_ID)",
+        "measurementId": "$(MEASUREMENT_ID)"
       }
       EOL
       echo "Generated firebase.config.json:"
-      ls -lh $(Build.SourcesDirectory)/src/lib/firebase.config.json
-      cat $(Build.SourcesDirectory)/src/lib/firebase.config.json
     displayName: "Generate firebase config file."
 
   - task: NodeTool@0

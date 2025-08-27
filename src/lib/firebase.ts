@@ -7,7 +7,7 @@ import config from "./firebase.config.json";
 
 console.log(config)
 
-const firebaseConfig = {
+let firebaseConfig = {
   apiKey: process.env.API_KEY || "",
   authDomain: process.env.AUTH_DOMAIN || "",
   databaseURL: process.env.DATABASE_URL || "",
@@ -20,6 +20,9 @@ const firebaseConfig = {
 
 console.log("Firebase config:",firebaseConfig);
 
+firebaseConfig = config;
+
+console.log("Last config:", firebaseConfig);
 
 // Initialize Firebase only if no apps exist
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
