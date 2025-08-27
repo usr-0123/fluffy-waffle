@@ -1,4 +1,4 @@
-xtrigger:
+trigger:
 
     branches:
       include:
