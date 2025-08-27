@@ -26,6 +26,16 @@ jobs:
       echo "##vso[task.setvariable variable=MEASUREMENT_ID]$(MEASUREMENT_ID)"
     displayName: "Set Environment Variables"
 
+  - bash: |
+      cat > firebase.config.json <<EOL
+      {
+        "apiKey": "$(API_KEY)"
+      }
+      EOL
+      echo "Generated firebase.config.json:"
+      cat firebase.config.json
+    displayName: "Generate firebase config file."
+
   - task: NodeTool@0
     inputs:
       versionSpec: '18.x'
