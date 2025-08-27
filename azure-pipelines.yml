@@ -15,16 +15,16 @@ jobs:
   - group: FirebaseConfig
 
   steps:
-  - powershell: |
-      $env:API_KEY = "$(API_KEY)"
-      $env:AUTH_DOMAIN = "$(AUTH_DOMAIN)"
-      $env:DATABASE_URL = "$(DATABASE_URL)"
-      $env:PROJECT_ID = "$(PROJECT_ID)"
-      $env:STORAGE_BUCKET = "$(STORAGE_BUCKET)"
-      $env:MESSAGING_SENDER_ID = "$(MESSAGING_SENDER_ID)"
-      $env.APP_ID = "$(APP_ID)"
-      $env.MEASUREMENT_ID = "$(MEASUREMENT_ID)"
-    displayName: "Set Environment Variables"
+  - bash: |
+    echo "##vso[task.setvariable variable=API_KEY]$(API_KEY)"
+    echo "##vso[task.setvariable variable=AUTH_DOMAIN]$(AUTH_DOMAIN)"
+    echo "##vso[task.setvariable variable=DATABASE_URL]$(DATABASE_URL)"
+    echo "##vso[task.setvariable variable=PROJECT_ID]$(PROJECT_ID)"
+    echo "##vso[task.setvariable variable=STORAGE_BUCKET]$(STORAGE_BUCKET)"
+    echo "##vso[task.setvariable variable=MESSAGING_SENDER_ID]$(MESSAGING_SENDER_ID)"
+    echo "##vso[task.setvariable variable=APP_ID]$(APP_ID)"
+    echo "##vso[task.setvariable variable=MEASUREMENT_ID]$(MEASUREMENT_ID)"
+  displayName: "Set Environment Variables"
 
   - task: NodeTool@0
     inputs:
