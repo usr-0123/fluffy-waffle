@@ -5,17 +5,15 @@ import { getDatabase } from 'firebase/database';
 import { getStorage } from 'firebase/storage';
 import config from "./firebase.config.json";
 
-console.log("Config:", config);
-
 const firebaseConfig = {
-  apiKey: "__API_KEY__",
-  authDomain: "__AUTH_DOMAIN__",
-  databaseURL: "__DATABASE_URL__",
-  projectId: "__PROJECT_ID__",
-  storageBucket: "__STORAGE_BUCKET__",
-  messagingSenderId: "__MESSAGING_SENDER_ID__",
-  appId: "__APP_ID__",
-  measurementId: "__MEASUREMENT_ID__"
+  apiKey: process.env.API_KEY || "",
+  authDomain: process.env.AUTH_DOMAIN || "",
+  databaseURL: process.env.DATABASE_URL || "",
+  projectId: process.env.PROJECT_ID || "",
+  storageBucket: process.env.STORAGE_BUCKET || "",
+  messagingSenderId: process.env.MESSAGING_SENDER_ID || "",
+  appId: process.env.APP_ID || "",
+  measurementId: process.env.MEASUREMENT_ID || ""
 };
 
 console.log("Firebase config:",firebaseConfig);

@@ -15,11 +15,16 @@ jobs:
   - group: FirebaseConfig
 
   steps:
-  - task: replacetokens@5
-    inputs:
-      targetFiles: '$(Build.SourcesDirectory)/src/lib/firebase.ts'
-      encoding: 'utf-8'
-      tokenPattern: 'default'
+  - powershell: |
+      $env:API_KEY = "$(API_KEY)"
+      $env:AUTH_DOMAIN = "$(AUTH_DOMAIN)"
+      $env:DATABASE_URL = "$(DATABASE_URL)"
+      $env:PROJECT_ID = "$(PROJECT_ID)"
+      $env:STORAGE_BUCKET = "$(STORAGE_BUCKET)"
+      $env:MESSAGING_SENDER_ID = "$(MESSAGING_SENDER_ID)"
+      $env.APP_ID = "$(APP_ID)"
+      $env.MEASUREMENT_ID = "$(MEASUREMENT_ID)"
+    displayName: "Set Environment Variables"
 
   - task: NodeTool@0
     inputs:
