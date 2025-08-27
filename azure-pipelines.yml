@@ -34,7 +34,7 @@ jobs:
       EOL
       echo "Generated firebase.config.json:"
       ls -lh $(Build.SourcesDirectory)/src/lib/firebase.config.json
-      cat $(Build.SourceDirectory)/src/libfirebase.config.json
+      cat $(Build.SourcesDirectory)/src/lib/firebase.config.json
     displayName: "Generate firebase config file."
 
   - task: NodeTool@0
