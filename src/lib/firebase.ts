@@ -5,6 +5,8 @@ import { getDatabase } from 'firebase/database';
 import { getStorage } from 'firebase/storage';
 import config from "./firebase.config.json";
 
+console.log(config)
+
 const firebaseConfig = {
   apiKey: process.env.API_KEY || "",
   authDomain: process.env.AUTH_DOMAIN || "",
