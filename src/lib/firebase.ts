@@ -3,6 +3,9 @@ import { initializeApp, getApps } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 import { getStorage } from 'firebase/storage';
+import config from "./firebase.config.json";
+
+console.log("Config:", config);
 
 const firebaseConfig = {
   apiKey: "__API_KEY__",
@@ -14,6 +17,8 @@ const firebaseConfig = {
   appId: "__APP_ID__",
   measurementId: "__MEASUREMENT_ID__"
 };
+
+console.log("Firebase config:",firebaseConfig);
 
 
 // Initialize Firebase only if no apps exist
