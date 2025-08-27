@@ -5,24 +5,18 @@ import { getDatabase } from 'firebase/database';
 import { getStorage } from 'firebase/storage';
 import config from "./firebase.config.json";
 
-console.log(config)
-
 let firebaseConfig = {
-  apiKey: process.env.API_KEY || "",
-  authDomain: process.env.AUTH_DOMAIN || "",
-  databaseURL: process.env.DATABASE_URL || "",
-  projectId: process.env.PROJECT_ID || "",
-  storageBucket: process.env.STORAGE_BUCKET || "",
-  messagingSenderId: process.env.MESSAGING_SENDER_ID || "",
-  appId: process.env.APP_ID || "",
-  measurementId: process.env.MEASUREMENT_ID || ""
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
-console.log("Firebase config:",firebaseConfig);
-
 firebaseConfig = config;
-
-console.log("Last config:", firebaseConfig);
 
 // Initialize Firebase only if no apps exist
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
