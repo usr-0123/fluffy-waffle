@@ -16,15 +16,15 @@ jobs:
 
   steps:
   - bash: |
-    echo "##vso[task.setvariable variable=API_KEY]$(API_KEY)"
-    echo "##vso[task.setvariable variable=AUTH_DOMAIN]$(AUTH_DOMAIN)"
-    echo "##vso[task.setvariable variable=DATABASE_URL]$(DATABASE_URL)"
-    echo "##vso[task.setvariable variable=PROJECT_ID]$(PROJECT_ID)"
-    echo "##vso[task.setvariable variable=STORAGE_BUCKET]$(STORAGE_BUCKET)"
-    echo "##vso[task.setvariable variable=MESSAGING_SENDER_ID]$(MESSAGING_SENDER_ID)"
-    echo "##vso[task.setvariable variable=APP_ID]$(APP_ID)"
-    echo "##vso[task.setvariable variable=MEASUREMENT_ID]$(MEASUREMENT_ID)"
-  displayName: "Set Environment Variables"
+      echo "##vso[task.setvariable variable=API_KEY]$(API_KEY)"
+      echo "##vso[task.setvariable variable=AUTH_DOMAIN]$(AUTH_DOMAIN)"
+      echo "##vso[task.setvariable variable=DATABASE_URL]$(DATABASE_URL)"
+      echo "##vso[task.setvariable variable=PROJECT_ID]$(PROJECT_ID)"
+      echo "##vso[task.setvariable variable=STORAGE_BUCKET]$(STORAGE_BUCKET)"
+      echo "##vso[task.setvariable variable=MESSAGING_SENDER_ID]$(MESSAGING_SENDER_ID)"
+      echo "##vso[task.setvariable variable=APP_ID]$(APP_ID)"
+      echo "##vso[task.setvariable variable=MEASUREMENT_ID]$(MEASUREMENT_ID)"
+    displayName: "Set Environment Variables"
 
   - task: NodeTool@0
     inputs:
