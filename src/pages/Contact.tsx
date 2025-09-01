@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, Zap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Option } from '@/types/select';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -12,6 +18,15 @@ const Contact = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const { toast } = useToast();
+
+    const options:Option[] = [
+        {label:"Residential Electrical", value:"residential"},
+        {label:"Commercial Projects", value:"commercial"},
+        {label:"Industrial Solutions", value:"industrial"},
+        {label:"Emergency Repairs", value:"emergency"},
+        {label:"Safety Inspections", value:"inspection"},
+        {label:"Maintenance Services", value:"maintenance"},
+    ]
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -68,87 +83,68 @@ const Contact = () => {
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Full Name *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            value={formData.name}
+                                        <Label htmlFor='name' className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</Label>
+                                        <Input
+                                            type='text'
+                                            placeholder='John Doe'
                                             onChange={handleChange}
+                                            value={formData.name}
+                                            name='name'
+                                            id='name'
                                             required
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                                            placeholder="John Doe"
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Phone Number *
-                                        </label>
-                                        <input
-                                            type="tel"
-                                            name="phone"
+                                        <Label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</Label>
+                                        <Input
+                                            type='tel'
+                                            name='phone'
                                             value={formData.phone}
-                                            onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                                            placeholder="(254) 123-4567"
+                                            placeholder='(254) 123-4567'
                                         />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        Email Address *
-                                    </label>
-                                    <input
-                                        type="email"
+                                    <Label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</Label>
+                                    <Input
+                                        type='email'
                                         name="email"
+                                        placeholder="john@example.com"
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                                        placeholder="john@example.com"
                                     />
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        Service Needed
-                                    </label>
-                                    <select
-                                        name="service"
-                                        value={formData.service}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                                    >
-                                        <option value="">Select a service...</option>
-                                        <option value="residential">Residential Electrical</option>
-                                        <option value="commercial">Commercial Projects</option>
-                                        <option value="industrial">Industrial Solutions</option>
-                                        <option value="emergency">Emergency Repairs</option>
-                                        <option value="inspection">Safety Inspections</option>
-                                        <option value="maintenance">Maintenance Services</option>
-                                    </select>
+                                    <Label className="block text-sm font-semibold text-gray-700 mb-2" htmlFor='service'>Service Needed *</Label>
+                                    <Select>
+                                        <SelectTrigger>
+                                            <SelectValue placeholder="Select a service..." />
+                                        </SelectTrigger>
+                                        <SelectContent options={options} />
+                                    </Select>
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                    <Label className="block text-sm font-semibold text-gray-700 mb-2">
                                         Project Details *
-                                    </label>
-                                    <textarea
+                                    </Label>
+                                    <Textarea
                                         name="message"
                                         value={formData.message}
                                         onChange={handleChange}
                                         required
                                         rows={5}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                        // className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                                         placeholder="Please describe your project requirements, timeline, and any specific needs..."
                                     />
                                 </div>
 
-                                <button
+                                <Button
                                     type="submit"
                                     disabled={isSubmitting}
                                     className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:transform-none flex items-center justify-center"
@@ -164,7 +160,7 @@ const Contact = () => {
                                             <Send className="ml-2 h-5 w-5" />
                                         </>
                                     )}
-                                </button>
+                                </Button>
                             </form>
                         </div>
 
